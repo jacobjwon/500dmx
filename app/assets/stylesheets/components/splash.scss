@@ -1,0 +1,38 @@
+.splash {
+  z-index: 1;
+  top: 0;
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-image: image_url("splash1.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.splash-body {
+  z-index: 2;
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  color: white;
+  font-family: "Mako", sans-serif;
+  text-align: center;
+}
+
+.splash-desc {
+  font-size: 24px;
+}
+
+.splash-login-btn {
+  background-color: #0098e5;
+  padding: 20px 30px;
+  margin-top: 50px;
+  border-radius: 100px;
+  text-shadow: none;
+}
+
+.splash-login-btn:hover {
+  background-color: #26a7e8;
+  border: 2px solid white;
+}
