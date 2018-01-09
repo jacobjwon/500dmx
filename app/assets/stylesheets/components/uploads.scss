@@ -1,0 +1,193 @@
+ @import "base/specs.scss";
+ @import "base/mixins.scss";
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(77, 77, 77, 0.75);
+  overflow: hidden;
+  z-index: 15;
+}
+
+.upload-modal {
+  @include modal-view;
+  margin: 10vh auto;
+  width: 90vw;
+  max-width: 80em;
+  max-height: 80vh;
+}
+
+.force-height {
+  height: 80vh;
+}
+
+.upload-preview-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.upload-preview {
+  position: relative;
+  max-height: 33vh;
+  max-width: 90%;
+  margin-top: -3em;
+  overflow: none;
+}
+
+
+.upload-preview img {
+  display: inline-flex;
+  align-self: center;
+  max-height: 33vh;
+  max-width: 100%;
+  width: auto;
+}
+
+.upload-btn{
+  box-sizing: border-box;
+  text-align: center;
+  background-color: $btn-blue;
+  cursor: pointer;
+  color: $white;
+  border: none;
+  height: 2.5em;
+  padding: 1em 2em;
+  font-size: 1.2em;
+  border-radius: .2em;
+  margin-top: -2em;
+  display: flex;
+  align-items: center;
+}
+
+.upload-btn-on:hover {
+  background-color: $btn-blue-hover;
+}
+
+.upload-label {
+  color: $nav-blue-hover;
+}
+
+.upload-details-form {
+  box-sizing: border-box;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 20em;
+  position: relative;
+}
+
+.upload-details-form form {
+  width: 80%;
+}
+
+.upload-details-form h3 {
+  font-size: 1.4em;
+  padding-bottom: 2em;
+  color: $dark-grey;
+  display: none;
+}
+
+.upload-details-form input, .upload-details-form textarea {
+  font-size: 1em;
+  outline: none;
+  width: 100%;
+}
+
+.upload-details-form input {
+  margin-bottom: .5em;
+}
+
+.upload-details-form textarea {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  height: 6em;
+}
+
+.upload-details-form input:focus, .upload-details-form textarea:focus {
+  border: solid 1px $nav-blue-hover;
+  box-shadow: none;
+  outline: none;
+}
+
+.modal-close {
+  position: absolute;
+  background-color: inherit;
+  font-size: 2em;
+  top: .5em;
+  right: .5em;
+}
+
+.modal-close:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.cancel-upload {
+  display: flex;
+  position: absolute;
+  font-size: 1.8em;
+  top: .5em;
+  left: .5em;
+  color: #c62f1d;
+}
+
+.cancel-upload:hover {
+  color: #dd3a27;
+  cursor: pointer;
+}
+
+.submit-loading {
+  text-align: center;
+  margin-top: 1em;
+}
+
+@media (min-width: 668px) {
+  .upload-modal {
+    flex-direction: row;
+    overflow: auto;
+  }
+
+  .profile-modal {
+    flex-direction: column;
+    overflow-x: auto;
+  }
+
+  .upload-preview {
+    max-height: 65vh;
+  }
+
+  .upload-preview img {
+    max-height: 65vh;
+  }
+
+  .upload-details-form {
+    border-left: 1px solid $light-grey;
+    width: 32em;
+  }
+
+  .upload-details-form h3 {
+    display: flex;
+  }
+
+  .upload-details-form input {
+    margin-bottom: 1.5em;
+    padding-top: .4em;
+    padding-bottom: .4em;
+  }
+
+  .upload-details-form textarea {
+    height: 10em;
+  }
+}

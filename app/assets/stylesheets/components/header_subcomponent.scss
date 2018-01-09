@@ -1,0 +1,97 @@
+ @import "base/specs.scss";
+ @import "base/mixins.scss";
+
+.nav-component {
+  height: 100%;
+  color: $black;
+  margin-right: .2em;
+}
+
+.nav-btn-tall {
+  background-color: $btn-green;
+  color: $white;
+  padding: 0 1em;
+  margin: 0 .2em;
+  text-decoration: none;
+  height: 100%;
+  cursor: pointer;
+}
+
+.nav-btn-tall:hover {
+  background-color: $btn-green-hover;
+}
+
+.nav-btn-tall-light {
+  background-color: $btn-blue;
+  height: 60%;
+  border-radius: 1em;
+}
+
+.nav-btn-tall-light:hover {
+  background-color: $btn-blue-hover;
+  color: $white;
+}
+
+.nav-user-profile {
+  height: 100%;
+  width: 3.5em;
+  padding: .5em;
+  display: flex;
+  align-items: center;
+  cursor: default;
+}
+
+.nav-user-icon {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  @include default-user-profile;
+  position: relative;
+}
+
+.nav-dropdown {
+  position: absolute;
+  color: gray;
+  top: 3.28em;
+  right: -1em;
+  padding-top: 1em;
+  background: $white;
+  width: 10.5em;
+  visibility: hidden;
+  border: solid 1px $light-grey;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.nav-dropdown-link {
+  margin: .2 .5em;
+  padding: .3em;
+  padding-left: 1.2em;
+  color: gray;
+  transition: color .2s;
+  @include hover-blue;
+  display: block;
+}
+
+.nav-dropdown-link:last-child {
+  border-top: 1px solid $light-grey;
+  padding-top: 1em;
+  margin-top: 1em;
+}
+
+@media only screen and (min-width: 668px) {
+  .nav-component {
+    margin-right: 1em;
+  }
+
+  .nav-btn-tall {
+    margin-left: 1.5em;
+    margin-right: 2.5em;
+  }
+
+  .nav-dropdown {
+    left: -1em;
+  }
+}

@@ -1,0 +1,119 @@
+ @import "base/specs.scss";
+ @import "base/mixins.scss";
+
+
+.login-grid h3 {
+  font-size: 1.5em;
+  padding: .5em;
+  margin-bottom: 1em;
+  color: rgb(82, 85, 88)
+}
+
+.login-grid {
+  box-sizing: border-box;
+  background-color: rgb(253, 253, 253);
+  margin: 0 auto;
+  margin-top: 10%;
+  padding: .8em;
+  border: solid 1px $light-grey;
+  display: flex;
+  width: 100%;
+  max-width: 25em;
+}
+
+.login-body {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.login-grid form {
+  width: 80%;
+}
+
+.login-grid label {
+  color: $dark-grey;
+}
+
+.login-grid input {
+  width: 100%;
+  margin: .5em 0;
+  font-size: 1em;
+  height: 2.2em;
+  padding: .2em 0;
+  box-sizing: border-box;
+  outline: none;
+  color: $dark-grey;
+  border: 1px $light-grey solid;
+}
+
+.login-grid input:focus {
+  outline: none;
+  border: 1px solid $btn-blue-hover;
+}
+
+.submit-btn {
+  @include btn-large;
+  background-color: $btn-green;
+}
+
+.submit-btn:hover {
+  background-color: $btn-green-hover;
+}
+
+.demo-login-btn {
+  box-sizing: border-box;
+  text-align: center;
+  width: 100%;
+  background-color: $btn-blue;
+  color: $white;
+  cursor: pointer;
+  border: none;
+  height: 2.5em;
+  padding: .5em;
+  margin-top: 2em;
+  margin-bottom: 3em;
+  font-size: 1.2em;
+  border-radius: .2em;
+}
+
+.demo-login-btn:hover {
+  background-color: $btn-blue-hover;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container-footer {
+  color: $dark-grey;
+
+}
+.login-container-footer a {
+  color: $nav-blue-hover;
+  text-decoration: none;
+}
+
+.session-errors {
+  text-align: center;
+  color: $dark-grey;
+  background: $errors-red;
+  padding: 1em .4em;
+  margin-top: -.5em;
+  margin-bottom: 1em;
+  border-radius: 1em;
+  width: 80%;
+}
+
+@media (min-width: 668px) {
+  .login-grid {
+    max-width: 25em;
+    width: 50%;
+  }
+
+}

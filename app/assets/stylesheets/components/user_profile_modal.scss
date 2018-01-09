@@ -1,0 +1,94 @@
+@import "base/specs.scss";
+@import "base/mixins.scss";
+
+.profile-modal {
+  @include modal-view;
+  max-width: 43em;
+  max-height: 90vh;
+  margin: 5vh auto;
+  position: relative;
+  background-color: $background-blue;
+}
+
+.profile-edit-component {
+  height: 100%;
+}
+
+.profile-edit-component h2 {
+  font-size: 1.3em;
+  font-weight: 600;
+  text-align: center;
+  margin: 2vh auto;
+  color: $black;
+}
+
+.profile-photo-change-component {
+  margin-bottom: 1em;
+}
+
+.profile-photo-change-component label {
+  margin: 0 auto;
+  display: block;
+  width: fit-content;
+  font-size: 1em;
+}
+
+.profile-photo-change-component span {
+  margin: 0 auto;
+}
+
+.profile-photo-change {
+  height: 6em;
+  width: 6em;
+  z-index: auto;
+  margin: 1em auto;
+  cursor: pointer;
+}
+// submit button
+.profile-edit-component button {
+  width: fit-content;
+  padding-left: 2em;
+  padding-right: 2em;
+  display: block;
+  margin: 1em auto;
+}
+
+.cover-photo-grid {
+  max-height: 50vh;
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: baseline;
+  justify-content: center;
+}
+
+.cover-photo-selected {
+  box-shadow: 0em 0em .8em 2px $btn-blue-hover;
+  border: 1px solid $btn-blue-hover;
+}
+
+.cover-photo-selector {
+  box-sizing: border-box;
+  height: 10em;
+  width: 10em;
+  overflow: hidden;
+  margin: .2em;
+}
+
+.cover-photo-selector:hover {
+  box-shadow: 0em 0em .5em 1px $btn-blue-hover;
+  cursor: pointer;
+}
+
+.cover-photo-selector img {
+  object-fit: cover;
+  height: 10em;
+  width: 10em;
+}
+
+@media (min-width: 668px) {
+  .profile-modal {
+    max-height: 80vh;
+    margin: 10vh auto;
+  }
+}
