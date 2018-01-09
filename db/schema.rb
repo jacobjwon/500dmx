@@ -35,8 +35,6 @@ ActiveRecord::Schema.define(version: 20180107151015) do
     t.string "password_digest", null: false
     t.string "session_token", null: false
     t.text "bio"
-    t.string "profile_img_url"
-    t.string "cover_img_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
