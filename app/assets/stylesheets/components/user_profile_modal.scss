@@ -10,18 +10,6 @@
   background-color: $background-blue;
 }
 
-.profile-edit-component {
-  height: 100%;
-}
-
-.profile-edit-component h2 {
-  font-size: 1.3em;
-  font-weight: 600;
-  text-align: center;
-  margin: 2vh auto;
-  color: $black;
-}
-
 .profile-photo-change-component {
   margin-bottom: 1em;
 }
@@ -43,14 +31,6 @@
   z-index: auto;
   margin: 1em auto;
   cursor: pointer;
-}
-// submit button
-.profile-edit-component button {
-  width: fit-content;
-  padding-left: 2em;
-  padding-right: 2em;
-  display: block;
-  margin: 1em auto;
 }
 
 .cover-photo-grid {

@@ -1,6 +1,7 @@
 require 'faker'
 
 User.destroy_all
+Follow.destroy_all
 Photo.destroy_all
 
 # This file should contain all the record creation needed to seed the database with its default values.
@@ -16,7 +17,7 @@ users = [
   User.create({username: 'rickandmorty', password: 'password'}),
   User.create({username: 'cheesesteak', password: 'password'}),
   User.create({username: 'montgomery', password: 'password'}),
-  User.create({username: 'harrypotter', password: 'password'}),
+  User.create({username: 'harrypotter', password: 'password'})
   # User.create({username: 'jennifer', password: 'password'}),
   # User.create({username: 'juicebox', password: 'password'}),
   # User.create({username: 'superman', password: 'password'}),
@@ -29,6 +30,23 @@ users = [
   # User.create({username: 'ketofriendly', password: 'password'})
 ]
 
+# FOLLOWS
+for i in (0...users.length) do
+  for j in (i+1...users.length) do
+    if rand(0..11) > 3
+      Follow.create({
+        follower_id: users[i].id,
+        following_id: users[j].id
+        })
+    end
+    if rand(0..11) > 3
+      Follow.create({
+        follower_id: users[j].id,
+        following_id: users[i].id
+        })
+    end
+  end
+end
 
 # PROFILE AND COVER PHOTO SEEDS
 users.each_with_index do |user, idx|
@@ -50,7 +68,7 @@ users.each_with_index do |user, idx|
 end
 
 users.each_with_index do |user, idx|
-  cover = File.open("app/assets/images/seed_pics/batch1/p#{idx}.jpg")
+  cover = File.open("app/assets/images/seed_pics/sample1/p#{idx}.jpg")
   Photo.create({
     title: Faker::RickAndMorty.location,
     description: Faker::RickAndMorty.quote,
@@ -61,7 +79,7 @@ users.each_with_index do |user, idx|
 end
 
 users.each_with_index do |user, idx|
-  cover = File.open("app/assets/images/seed_pics/batch2/p#{idx}.jpg")
+  cover = File.open("app/assets/images/seed_pics/sample2/p#{idx}.jpg")
   Photo.create({
     title: Faker::RickAndMorty.location,
     description: Faker::RickAndMorty.quote,
@@ -72,7 +90,7 @@ users.each_with_index do |user, idx|
 end
 
 users.each_with_index do |user, idx|
-  cover = File.open("app/assets/images/seed_pics/batch2/p#{idx}.jpg")
+  cover = File.open("app/assets/images/seed_pics/sample3/p#{idx}.jpg")
   Photo.create({
     title: Faker::RickAndMorty.location,
     description: Faker::RickAndMorty.quote,

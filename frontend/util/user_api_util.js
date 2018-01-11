@@ -9,3 +9,25 @@ export const fetchUser = (id) => {
     url: `api/user/${id}`
   });
 };
+
+export const followUser = followRequest => {
+  return $.ajax({
+    url: `api/user/${followRequest.followeeId}/follow`,
+    data: {followerId: followRequest.followerId},
+    method: 'PATCH'
+  });
+};
+
+export const unfollowUser = unfollowRequest => {
+  return $.ajax({
+    url: `api/user/${unfollowRequest.followeeId}/unfollow`,
+    data: {followerId: unfollowRequest.followerId},
+    method: 'DELETE'
+  });
+};
+
+export const getAllFollows = (id) => {
+  return $.ajax({
+    url: `api/user?type=getAllFollows&id=${id}`
+  });
+};

@@ -9,18 +9,6 @@
   z-index: 0;
 }
 
-.profile-edit-btn {
-  @include profile-btn;
-  cursor: pointer;
-  background-color: $btn-blue;
-  color: $white;
-  z-index: 1;
-}
-
-.profile-edit-btn:hover {
-  background-color: $btn-blue-hover;
-}
-
 .user-profile-masthead {
   z-index: 5;
   display: flex;
@@ -74,19 +62,6 @@
   background-color: $background-blue;
 }
 
-.profile-edit-component {
-  height: 100%;
-}
-
-.profile-edit-component h2 {
-  font-size: 1.3em;
-  font-weight: 600;
-  text-align: center;
-  margin: 2vh auto;
-  color: $black;
-  // color: $nav-blue-hover;
-}
-
 .profile-photo-change-component {
   margin-bottom: 1em;
 }
@@ -108,14 +83,6 @@
   z-index: auto;
   margin: 1em auto;
   cursor: pointer;
-}
-// submit button
-.profile-edit-component button {
-  width: fit-content;
-  padding-left: 2em;
-  padding-right: 2em;
-  display: block;
-  margin: 1em auto;
 }
 
 .cover-photo-grid {
@@ -149,14 +116,4 @@
   object-fit: cover;
   height: 10em;
   width: 10em;
-}
-
-@media (min-width: 668px) {
-  .profile-edit-btn {
-    right: 5vw;
-  }
-
-  .profile-edit-component button {
-    margin-top: 1.2em;
-  }
 }

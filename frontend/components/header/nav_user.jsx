@@ -52,14 +52,14 @@ class UserNavComponent extends React.Component {
             <br />
             <ul className={dropdownClass}>
               <Link to={`/${this.props.currentUser.username}`} className='nav-dropdown-link'>My Profile</Link>
-              <Link to='/manage' className='nav-dropdown-link'>Manage Photos</Link>
+              <Link to='/feed' className='nav-dropdown-link'>My Feed</Link>
               <li className='nav-dropdown-link' onClick={this.logout.bind(this)}>Logout</li>
             </ul>
           </span>
         </div>
         <span onClick={this.showUpload.bind(this)} className='nav-btn-tall flex-center'>
           <i className='fa fa-cloud-upload display-if' aria-hidden='true' />
-          <span className='nav-link-text'></span>
+          <span className='nav-link-text'>Upload</span>
         </span>
       </div>
     );

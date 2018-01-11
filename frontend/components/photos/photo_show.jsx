@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import FollowButton from '../follows/follow_button';
 
 class PhotoShow extends React.Component {
   componentDidMount () {
@@ -51,6 +52,7 @@ class PhotoShow extends React.Component {
               <Link to={`/${user.username}`} className='follow-user-link'>{user.username}</Link>
               <br />
             </div>
+            <FollowButton user={this.props.user} />
           </div>
           <div className='photo-show-description'>
             <h3>{ this.props.photo.title }</h3>

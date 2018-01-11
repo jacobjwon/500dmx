@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactModal from 'react-modal';
-import ProfileEditModal from './user_profile_edit_modal';
+import FollowButton from '../follows/follow_button';
+import FollowModal from '../follows/follows_modal';
 import { Link } from 'react-router-dom';
 
 class UserProfile extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      editModalOpen: false,
+      followersModalOpen: false,
+      followingModalOpen: false
     };
   }
 
@@ -37,7 +39,8 @@ class UserProfile extends React.Component {
     document.body.style.overflow = 'auto';
 
     this.setState({
-      editModalOpen: false,
+      followersModalOpen: false,
+      followingModalOpen: false
     });
   }
 
@@ -66,9 +69,8 @@ class UserProfile extends React.Component {
     }
 
     let profileBtn;
-    if (this.props.loggedIn && this.props.currentUser.id === this.props.user.id) {
-      profileBtn = <span onClick={() => this.setState({editModalOpen: true})}
-        className='profile-edit-btn'>Edit Profile</span>;
+    if (this.props.loggedIn && this.props.currentUser.id !== this.props.user.id) {
+      profileBtn = <FollowButton user={this.props.user} profile='true' />;
     }
 
     return (
@@ -79,6 +81,14 @@ class UserProfile extends React.Component {
         <div className='user-profile-masthead'>
           <span style={profilePhotoUrl} className='profile-photo' />
           <h1 className='profile-header'>{this.props.user.username}</h1>
+            <div className='user-profile-subheader-text'>
+              <span onClick={() => this.setState({followersModalOpen: true})} className='hover-blue'>
+                {this.props.user.numFollowers} Followers
+              </span>
+              <span onClick={() => this.setState({followingModalOpen: true})} className='hover-blue'>
+                {this.props.user.numFollowing} Following
+              </span>
+            </div>
         </div>
         <div className='photos-grid'>
           { noPhotosWarning }
@@ -87,19 +97,29 @@ class UserProfile extends React.Component {
           </div>
         </div>
 
-        <ReactModal isOpen={this.state.editModalOpen} className='profile-modal'
+        <ReactModal isOpen={this.state.followersModalOpen} className='follow-modal'
           onRequestClose={this.closeModal.bind(this)} overlayClassName='overlay'
           onAfterOpen={this.openModal.bind(this)}>
-          <div>
+          <div className='follow-header'>
+            <h4>Followers </h4>
+            <span> {this.props.user.numFollowers}</span>
             <i onClick={this.closeModal.bind(this)} className='fa fa-times modal-close' aria-hidden='true' />
           </div>
-          <ProfileEditModal setProfilePhoto={this.props.setProfilePhoto}
-            oldProfileUrl={this.props.user.profilePhotoUrl}
-            setCoverPhoto={this.props.setCoverPhoto}
-            photos={this.props.photos}
-            currentUser={this.props.currentUser} />
+          <FollowModal closeModal={this.closeModal.bind(this)}
+            user={this.props.user} type='followers' />
         </ReactModal>
 
+        <ReactModal isOpen={this.state.followingModalOpen} className='follow-modal'
+          onRequestClose={this.closeModal.bind(this)} overlayClassName='overlay'
+          onAfterOpen={this.openModal.bind(this)}>
+          <div className='follow-header'>
+            <h4>Following </h4>
+            <span> {this.props.user.numFollowing}</span>
+            <i onClick={this.closeModal.bind(this)} className='fa fa-times modal-close' aria-hidden='true' />
+          </div>
+          <FollowModal closeModal={this.closeModal.bind(this)}
+            user={this.props.user} type='following' />
+        </ReactModal>
       </div>
     );
   }
