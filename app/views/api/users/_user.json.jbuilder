@@ -1,6 +1,9 @@
 json.username user.username
 json.id user.id
 
+json.numFollowers user.followers.length
+json.numFollowing user.followees.length
+
 json.thumbnails user.photos.reject {|photo| photo.title == 'profile_pic_id#835612'}
   .map { |photo| asset_path(photo.image.url(:thumb)) }
 

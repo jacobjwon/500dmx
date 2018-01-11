@@ -99,7 +99,7 @@ class UploadComponent extends React.Component {
     let uploadBtn;
     let imagePreviewContainer;
     if (!this.state.imageUrl) {
-      uploadBtn = <label htmlFor='fileInput' className='upload-btn' >Select a photo</label>;
+      uploadBtn = <label htmlFor='fileInput' className='upload-btn' >Select photo</label>;
     } else {
       imagePreviewContainer = (
         <div className='upload-preview'>
@@ -136,7 +136,7 @@ class UploadComponent extends React.Component {
         </div>
         <div className='upload-details-form'>
           <i onClick={this.closeModal.bind(this)} className='fa fa-times modal-close mobile-hide' aria-hidden='true' />
-          <h3>Upload your photo!</h3>
+          <h3>Upload your photo, fool.</h3>
           { this.getErrors() }
           <form>
             <label><span className='upload-label'>Title</span>
@@ -148,7 +148,7 @@ class UploadComponent extends React.Component {
             <label><span className='upload-label'>Description</span>
               <br />
               <textarea onChange={this.handleInput('description')}
-                placeholder='Tell us more about your awesome photo!'
+                placeholder='Describe your photo, fool.'
                 value={this.state.description} ></textarea>
             </label>
             { submitButton }
