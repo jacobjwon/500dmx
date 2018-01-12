@@ -103,7 +103,7 @@ class UploadComponent extends React.Component {
     } else {
       imagePreviewContainer = (
         <div className='upload-preview'>
-          <i className='fa fa-window-close cancel-upload'
+          <i className='fa fa-close cancel-upload'
             onClick={this.cancelPhotoUpload.bind(this)} aria-hidden='true' />
           <img src={this.state.imageUrl} />
         </div>
@@ -136,7 +136,7 @@ class UploadComponent extends React.Component {
         </div>
         <div className='upload-details-form'>
           <i onClick={this.closeModal.bind(this)} className='fa fa-times modal-close mobile-hide' aria-hidden='true' />
-          <h3>Upload your photo, fool.</h3>
+          <h3>Upload that photo.</h3>
           { this.getErrors() }
           <form>
             <label><span className='upload-label'>Title</span>
@@ -148,7 +148,7 @@ class UploadComponent extends React.Component {
             <label><span className='upload-label'>Description</span>
               <br />
               <textarea onChange={this.handleInput('description')}
-                placeholder='Describe your photo, fool.'
+                placeholder='Describe that photo real good.'
                 value={this.state.description} ></textarea>
             </label>
             { submitButton }

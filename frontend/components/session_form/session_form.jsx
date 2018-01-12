@@ -102,7 +102,7 @@ class SessionForm extends React.Component {
     return (
       <div className='zoomOpen'>
         <div className='container login-grid'>
-          <main className='container flex-col login-body'>
+          <main className='container flex-col login-body image_blur'>
             <h3>{headerText}</h3>
             { this.errors() }
             <form onSubmit={this.handleSubmit} className='flex-col' action='index.html' method='post'>

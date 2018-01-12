@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import { getAllFollows } from '../../actions/user_actions';
 import FollowUserItem from './follows_user_item';
 
-// this component should always be passed as a prop the user id it is attached to
-
 class FollowsModal extends React.Component {
   constructor (props) {
     super(props);
