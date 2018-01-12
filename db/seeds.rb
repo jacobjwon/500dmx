@@ -17,17 +17,12 @@ users = [
   User.create({username: 'rickandmorty', password: 'password'}),
   User.create({username: 'cheesesteak', password: 'password'}),
   User.create({username: 'montgomery', password: 'password'}),
-  User.create({username: 'harrypotter', password: 'password'})
-  # User.create({username: 'jennifer', password: 'password'}),
-  # User.create({username: 'juicebox', password: 'password'}),
-  # User.create({username: 'superman', password: 'password'}),
-  # User.create({username: 'starlord', password: 'password'}),
-  # User.create({username: 'oldirtybastard', password: 'password'}),
-  # User.create({username: 'milkandcookies', password: 'password'}),
-  # User.create({username: 'omelette', password: 'password'}),
-  # User.create({username: 'baconeggscheese', password: 'password'}),
-  # User.create({username: 'giantcactus', password: 'password'}),
-  # User.create({username: 'ketofriendly', password: 'password'})
+  User.create({username: 'harrypotter', password: 'password'}),
+  User.create({username: 'janetjackson', password: 'password'}),
+  User.create({username: 'juicebox', password: 'password'}),
+  User.create({username: 'frazzlesnazzle', password: 'password'}),
+  User.create({username: 'starlord', password: 'password'}),
+  User.create({username: 'dirtmcgirt', password: 'password'})
 ]
 
 # FOLLOWS
