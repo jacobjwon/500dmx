@@ -25,9 +25,6 @@ class FollowsModal extends React.Component {
   }
 
   render () {
-    // let users = this.props.users.map((user, idx) => {
-    //   return <FollowUserItem user={user} key={idx} closeModal={this.props.closeModal} />;
-    // });
     return (
       <div className='follow-users-list'>
         { this.state.userArray }

@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom';
 import UserProfile from './user_profile';
 import { fetchUserPhotos, setProfilePhoto, setCoverPhoto, clearPhotos } from '../../actions/photo_actions';
 import { fetchUser } from '../../actions/user_actions';
-// import { login, signup, clearErrors } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let photos = Object.values(state.entities.photos).reverse();

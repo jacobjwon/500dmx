@@ -5,8 +5,6 @@ import { fetchUser } from '../../actions/user_actions';
 import { toggleUploadModal } from '../../actions/ui_actions';
 import { withRouter } from 'react-router-dom';
 
-// import { login, signup, clearErrors } from '../../actions/session_actions';
-
 const mapStateToProps = state => {
   let user = state.session.currentUser;
   if (state.session.currentUser) {
