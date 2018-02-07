@@ -52,6 +52,7 @@ class UserNavComponent extends React.Component {
             <br />
             <ul className={dropdownClass}>
               <Link to={`/${this.props.currentUser.username}`} className='nav-dropdown-link'>My Profile</Link>
+              <Link to='/manage' className='nav-dropdown-link'>Manage Photos</Link>
               <Link to='/feed' className='nav-dropdown-link'>My Feed</Link>
               <li className='nav-dropdown-link' onClick={this.logout.bind(this)}>Logout</li>
             </ul>

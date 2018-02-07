@@ -7,6 +7,7 @@ import UserProfileContainer from './user_profile/user_profile_container';
 import UploadFormContainer from './upload/upload_container';
 import PhotoContainer from './photos/photo_show_container';
 import PhotoFeedContainer from './photos/photo_feed_container';
+import PhotoManageContainer from './photos/photo_manage_container';
 import Splash from './static_pages/splash';
 
 const App = () => (
@@ -16,6 +17,7 @@ const App = () => (
       <AuthRoute exact path='/' component={Splash} />
       <AuthRoute path='/login' component={SessionFormContainer} />
       <AuthRoute path='/signup' component={SessionFormContainer} />
+      <ProtectedRoute exact path='/manage' component={PhotoManageContainer} />
       <ProtectedRoute exact path='/feed' component={PhotoFeedContainer} />
       <Route exact path='/:username' component={UserProfileContainer} />
       <Route exact path='/photos/:photoId' component={PhotoContainer} />
